@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" />
+    <link rel="stylesheet" href="css/style.css" media="screen" />
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <!-- CSS have some icon and extra font  -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<!-- whole ui view is in body by using myApp module-->
+<body style="" ng-app="myApp" ng-cloak>
+    <ui-view></ui-view>
+</body>
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<!-- different source files from bower -->
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/angularfire/dist/angularfire.min.js" charset="utf-8"></script>
+<script src="bower_components/firebase/firebase.js"></script>
+<script src="bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="bower_components/satellizer/dist/satellizer.min.js" charset="utf-8"></script>
+<!-- source files related to project -->
+<script src="app.js"></script>
+<script src="js/controller/loginCtrl.js" charset="utf-8"></script>
+<script src="js/controller/dashCtrl.js" charset="utf-8"></script>
+<script src="service/myService.js" charset="utf-8"></script>
+</html>

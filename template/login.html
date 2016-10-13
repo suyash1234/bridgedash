@@ -1,0 +1,54 @@
+<body class="mycolor">
+<!-- create a container in which we have to put our form -->
+<div class="container" style="margin-top:8%";>
+    <!-- create a one row in which we have to put our form -->
+    <div class="row">
+
+        <!-- create a column having large screen size and set its offset to center -->
+        <div class="col-lg-4 col-lg-offset-4 col-md-5 col-md-offset-4 col-sm-6 col-sm-offset-4 col-xs-mob col-xs-tab" style="background-color:#152c71">
+            <!-- put the heading  -->
+            <h2 align="center" style="color:grey">Login Form</h2><br/>
+        </div>
+
+        <!-- create a column having large screen size and set its offset to center -->
+        <div class="col-lg-4 col-lg-offset-4 col-md-5 col-md-offset-4 col-sm-6 col-sm-offset-4 col-xs-mob col-xs-tab" style="background: rgba(255,255,255,.40)">
+            </br>
+            <!-- create a form having fields Email and paasword-->
+            <form name="forms">
+                <div class="form-group">
+                    <!-- set the glyphicon for email and use ngMessagesto display messages-->
+                    <span class="glyphicon glyphicon-envelope"></span>
+                    <label for="email">Email:</label></br>
+                    <input type="email" class="form-control" name="userEmail" ng-model="email" required placeholder="Email">
+                    <div ng-messages="forms.userEmail.$error" style="color:#6b0a0a">
+                        <div ng-message="required">This field is required</div>
+                        <div ng-message="email">Your email address is invalid</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <!-- set the glyphicon for password and use ngMessagesto display messages-->
+                    <span class="glyphicon glyphicon-lock"></span>
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" name="userPass" ng-minlength="1" ng-maxlength="6" ng-model="password" required placeholder="Password">
+                    <div ng-messages="forms.userPass.$error" style="color:#6b0a0a">
+                        <div ng-message="required">This field is required</div>
+                        <div ng-message="minlength">Message must be over 1 character</div>
+                        <div ng-message="maxlength">Message must not exceed 6 characters</div>
+                        <div ng-show="error">{{error}}</div>
+                    </div>
+                </div>
+
+                <div class="checkbox">
+                    <label><input type="checkbox"> Remember me</label>
+                </div>
+                </br>
+                <!-- make two buttons for login and reset -->
+                <span style="margin-left:30%"><button type="submit" class="btn btn-danger" ng-click="login()" ng-disabled="forms.$invalid">Login</button></span>&nbsp;&nbsp;&nbsp;
+                <button type="reset" class="btn btn-danger">Reset</button>
+            </form><br/>
+            <!-- closing of form -->
+        </div>
+    </div>
+</div>
+</body>
