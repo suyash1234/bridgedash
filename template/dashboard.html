@@ -92,41 +92,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>3326</td>
-                                            <td>ABC</td>
-                                            <td>Java Script</td>
-                                            <td>10/21/2013</td>
-                                            <td>3:29 PM</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3325</td>
-                                            <td>ABC</td>
-                                            <td>Java Script</td>
-                                            <td>10/21/2013</td>
-                                            <td>3:20 PM</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3324</td>
-                                            <td>MNO</td>
-                                            <td>Java Script</td>
-                                            <td>10/21/2013</td>
-                                            <td>3:03 PM</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3323</td>
-                                            <td>XYZ</td>
-                                            <td>i-OS</td>
-                                            <td>10/21/2013</td>
-                                            <td>3:00 PM</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3322</td>
-                                            <td>abc</td>
-                                            <td>Java</td>
-                                            <td>10/21/2013</td>
-                                            <td>2:49 PM</td>
-                                        </tr>
+                                      <tr ng-repeat="data in table">
+                                          <td>{{data.emp_id}}</td>
+                                          <td>{{data.emp_name}}</td>
+                                          <td>{{data.emp_tech}}</td>
+                                          <td>{{data.date}}</td>
+                                          <td>{{data.time}}</td>
+                                      </tr>
+
                                     </tbody>
                                 </table>
                             </div>
@@ -156,14 +129,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>3326</td>
-                                            <td>ABC</td>
-                                            <td>10000/-</td>
-                                            <td>10/21/2013</td>
-                                            <td>3:29 PM</td>
-                                        </tr>
-                                        <tr>
+                                      <tr ng-repeat="data in tables">
+                                          <td>{{data.emp_id}}</td>
+                                          <td>{{data.emp_name}}</td>
+                                          <td>{{data.salary}}</td>
+                                          <td>{{data.date}}</td>
+                                          <td>{{data.time}}</td>
+                                      </tr>
+                                        <!-- <tr>
                                             <td>3325</td>
                                             <td>ABC</td>
                                             <td>8000/-</td>
@@ -190,7 +163,7 @@
                                             <td>5000/-</td>
                                             <td>10/21/2013</td>
                                             <td>2:49 PM</td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                                 </table>
                             </div>

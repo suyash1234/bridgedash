@@ -1,5 +1,5 @@
 angular.module('myApp')
-.controller("loginCtrl",function($scope,$location,MyService,$auth,$firebase){
+.controller("loginCtrl",function($scope,$location,MyService,$auth){
 // $scope.login=function(){
 //   if($scope.email==="abc@gmail.com" && $scope.password==="1234"){
 //     $location.path("/dashboard");
@@ -8,11 +8,13 @@ angular.module('myApp')
 //     $scope.error="user not found !";
 //   }
 // }
-$scope.login=function(){
+$scope.signup=function(){
+  console.log("call success");
   $auth
-   .login({email: $scope.email, password: $scope.password})
+   .singup({email: $scope.email, password: $scope.password})
       .then(function (response) {
         $auth.setToken(response);
+        console.log(response);
         $state.go('dashboard');
         var str = $scope.email;
         var res = str.split('@');
@@ -26,8 +28,5 @@ $scope.login=function(){
         $scope.error="user not found !"+response;
 
       })
-
-
-  // firebase.auth().signInWithEmailAndPassword($scope.email,$scope.password)
-};
+  };
 })
