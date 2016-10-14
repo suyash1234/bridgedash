@@ -19,7 +19,7 @@
                     <!-- set the glyphicon for email and use ngMessagesto display messages-->
                     <span class="glyphicon glyphicon-envelope"></span>
                     <label for="email">Email:</label></br>
-                    <input type="email" class="form-control" name="userEmail" ng-model="email" required placeholder="Email">
+                    <input type="email" class="form-control" name="userEmail" ng-model="data.email" required placeholder="Email">
                     <div ng-messages="forms.userEmail.$error" style="color:#6b0a0a">
                         <div ng-message="required">This field is required</div>
                         <div ng-message="email">Your email address is invalid</div>
@@ -30,7 +30,7 @@
                     <!-- set the glyphicon for password and use ngMessagesto display messages-->
                     <span class="glyphicon glyphicon-lock"></span>
                     <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" name="userPass" ng-minlength="1" ng-maxlength="6" ng-model="password" required placeholder="Password">
+                    <input type="password" class="form-control" name="userPass" ng-minlength="3" ng-model="data.password" required placeholder="Password">
                     <div ng-messages="forms.userPass.$error" style="color:#6b0a0a">
                         <div ng-message="required">This field is required</div>
                         <div ng-message="minlength">Message must be over 1 character</div>
