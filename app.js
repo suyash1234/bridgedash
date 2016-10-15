@@ -5,31 +5,32 @@
  */
 
 /*create a module myApp and inject the services*/
-var app = angular.module('myApp', ['ui.router', 'firebase','ngMessages','ngStorage','base64']);
+var app = angular.module('myApp', ['ui.router', 'firebase', 'ngMessages', 'ngStorage', 'base64']);
 
 /*use config to configure different states and pass services in config function*/
 app.config(function($stateProvider, $urlRouterProvider) {
+    /*Code for skip Login Page*/
 
-  var loginRequired=function($q,MyService){
-    var deffered=$q.defer();
-    if(!MyService.isAuth()){
-      location.path("/login");
+    var skipIfLoggedIn = function($q, MyService, $location) {
+        var deffered = $q.defer();
+        if (MyService.isAuth()) {
+            $location.path("/dashboard");
+        } else {
+            deffered.resolve();
+        }
+        return deffered.promise;
     }
-    else{
-      deffered.resolve();
+
+    var loginRequired = function($q, MyService, $location) {
+        var deffered = $q.defer();
+        if (!MyService.isAuth()) {
+            $location.path("/login");
+        } else {
+            deffered.resolve();
+        }
+        return deffered.promise;
     }
-    return deffered.promise;
-  }
-var skipIfLoggedIn=function($q,MyService){
-  var deffered=$q.defer();
-  if(MyService.isAuth()){
-    location.path("/dashboard");
-  }
-  else{
-    deffered.resolve();
-  }
-  return deffered.promise;
-}
+
     /* initially app goes to the login page*/
     $urlRouterProvider.otherwise('/login');
 
@@ -41,8 +42,8 @@ var skipIfLoggedIn=function($q,MyService){
         url: '/login',
         templateUrl: 'template/login.html',
         controller: 'loginCtrl',
-        resolve:{
-          skipIfLoggedIn:skipIfLoggedIn
+        resolve: {
+            skipIfLoggedIn: skipIfLoggedIn
         }
     })
     $stateProvider
@@ -52,8 +53,8 @@ var skipIfLoggedIn=function($q,MyService){
         url: '/dashboard',
         templateUrl: 'template/dashboard.html',
         controller: 'dashCtrl',
-        resolve:{
-          loginRequired:loginRequired
+        resolve: {
+            loginRequired: loginRequired
         }
     })
-  });
+});
