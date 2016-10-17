@@ -18,7 +18,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     var skipIfLoggedIn = function($q, MyService, $location) {
         var deffered = $q.defer();
         if (MyService.isAuth()) {
-            $location.path("/dashboard");
+            $location.path("/dashboard/empPersonal");
         } else {
             deffered.resolve();
         }
@@ -70,10 +70,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('dashboard.empContract', {
         url: '/empContract',
         templateUrl: 'template/empContract.html',
-        // controller: 'dashCtrl',
-        /* call the loginRequired function in the same page*/
-        resolve: {
-            loginRequired: loginRequired
+        controller: 'empContractCtrl',
+        resolve:{
+          loginRequired:loginRequired
         }
     })
     $stateProvider
@@ -82,11 +81,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('dashboard.empBankDetails', {
         url: '/empBankDetails',
         templateUrl: 'template/empBankDetails.html',
-        // controller: 'dashCtrl',
-        /* call the loginRequired function in the same page*/
-        resolve: {
-            loginRequired: loginRequired
-        }
+         controller: 'empBankDetailsCtrl',
+         resolve:{
+           loginRequired:loginRequired
+         }
     })
     $stateProvider
 
@@ -94,22 +92,20 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('dashboard.empProfile', {
         url: '/empProfile',
         templateUrl: 'template/empProfile.html',
-        // controller: 'dashCtrl',
-        /* call the loginRequired function in the same page*/
-        resolve: {
-            loginRequired: loginRequired
-        }
+         controller: 'empProfileCtrl',
+         resolve:{
+           loginRequired:loginRequired
+         }
     })
     $stateProvider
 
     /* configure the login state*/
         .state('dashboard.empPersonal', {
         url: '/empPersonal',
-        templateUrl: 'template/empPersonal.html',
-        // controller: 'dashCtrl',
-        /* call the loginRequired function in the same page*/
-        resolve: {
-            loginRequired: loginRequired
-        }
+         templateUrl: 'template/empPersonal.html',
+         controller: 'empPersonalCtrl',
+         resolve:{
+           loginRequired:loginRequired
+         }
     })
 });
