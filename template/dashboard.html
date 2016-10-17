@@ -35,21 +35,19 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li class="active">
-                    <a href=""><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    <a><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="" data-toggle="collapse" data-target="#emp"><i class="fa fa-user"></i> Employee<i class="fa fa-fw fa-caret-down"></i></a>
-                    <ul id="emp" class="collapse">
-                        <li>
-                            <a href="">Bridge Employees</a>
-                        </li>
-                        <li>
-                            <a href="">Tech Employees</a>
-                        </li>
-                    </ul>
+                    <a ui-sref="dashboard.empContract"><i class="fa fa-fw fa-table"></i> Employee Contract</a>
                 </li>
                 <li>
-                    <a href=""><i class="fa fa-fw fa-table"></i> Finance</a>
+                    <a ui-sref="dashboard.empBankDetails"><i class="fa fa-fw fa-table"></i> Employee Bank Details</a>
+                </li>
+                <li>
+                    <a ui-sref="dashboard.empProfile"><i class="fa fa-fw fa-table"></i> Employee Profile</a>
+                </li>
+                <li>
+                    <a ui-sref="dashboard.empPersonal"><i class="fa fa-fw fa-table"></i> Employee Details</a>
                 </li>
             </ul>
         </div>
@@ -72,8 +70,10 @@
                 </div>
             </div>
 
-            <div class="row">
-                <!-- Bridge labz Employees Table display here -->
+            <ui-view></ui-view>
+
+            <!-- <div class="row">
+                Bridge labz Employees Table display here
                 <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -110,7 +110,7 @@
                     </div>
                 </div>
 
-                <!-- Finanace Table values get display here -->
+               Finanace Table values get display here
                 <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -136,34 +136,6 @@
                                             <td>{{data.date}}</td>
                                             <td>{{data.time}}</td>
                                         </tr>
-                                        <!-- <tr>
-                                            <td>3325</td>
-                                            <td>ABC</td>
-                                            <td>8000/-</td>
-                                            <td>10/21/2013</td>
-                                            <td>3:20 PM</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3324</td>
-                                            <td>MNO</td>
-                                            <td>10000/-</td>
-                                            <td>10/21/2013</td>
-                                            <td>3:03 PM</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3323</td>
-                                            <td>XYZ</td>
-                                            <td>10000/-</td>
-                                            <td>10/21/2013</td>
-                                            <td>3:00 PM</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3322</td>
-                                            <td>abc</td>
-                                            <td>5000/-</td>
-                                            <td>10/21/2013</td>
-                                            <td>2:49 PM</td>
-                                        </tr> -->
                                     </tbody>
                                 </table>
                             </div>
@@ -173,7 +145,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

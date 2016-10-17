@@ -1,0 +1,38 @@
+<div class="row">
+    <!-- Bridge labz Employees Table display here -->
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-user fa-fw"></i> Bridgelabz Employees</h3>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>Emp ID #</th>
+                                <th>Emp Name</th>
+                                <th>Emp Tech</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="data in table">
+                                <td>{{data.emp_id}}</td>
+                                <td>{{data.emp_name}}</td>
+                                <td>{{data.emp_tech}}</td>
+                                <td>{{data.date}}</td>
+                                <td>{{data.time}}</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-right">
+                    <a href="">View All BridgeLabz Employees <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
