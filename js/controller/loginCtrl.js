@@ -19,7 +19,7 @@ angular.module('myApp')
                     };
                     var enc = MyService.myEncrypt(obj);
                     $localStorage.LoginData = enc;
-                    $location.path("/dashboard");
+                    $location.path("/dashboard/empPersonal");
                 },
                 function(error) {
                     console.log("error::" + error);
