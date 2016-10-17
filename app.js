@@ -1,6 +1,6 @@
 /**
  * FileName:app.js
- * CreatedBy: Suyash
+ * CreatedBy: Suyash,Hamid
  * purpose : perform routing according to state
  */
 
@@ -11,6 +11,10 @@ var app = angular.module('myApp', ['ui.router', 'firebase', 'ngMessages', 'ngSto
 app.config(function($stateProvider, $urlRouterProvider) {
     /*Code for skip Login Page*/
 
+    /*  this function skip the login page and show directly dashboard until user login
+     * if user logout then goes to the login page
+     * use the MyService service to call isAuth() function
+     */
     var skipIfLoggedIn = function($q, MyService, $location) {
         var deffered = $q.defer();
         if (MyService.isAuth()) {
@@ -21,6 +25,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         return deffered.promise;
     }
 
+    /* this function works as if the user not login then first he must login then go the dashboard page*/
     var loginRequired = function($q, MyService, $location) {
         var deffered = $q.defer();
         if (!MyService.isAuth()) {
@@ -42,6 +47,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: '/login',
         templateUrl: 'template/login.html',
         controller: 'loginCtrl',
+        /* call the skipIfLoggedIn function in the same page*/
         resolve: {
             skipIfLoggedIn: skipIfLoggedIn
         }
@@ -53,6 +59,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: '/dashboard',
         templateUrl: 'template/dashboard.html',
         controller: 'dashCtrl',
+        /* call the loginRequired function in the same page*/
         resolve: {
             loginRequired: loginRequired
         }
