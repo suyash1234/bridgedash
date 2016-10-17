@@ -22,15 +22,4 @@ angular.module("myApp").controller("dashCtrl", function($scope, $location, MySer
        this is used using binding expression in the html page*/
     $scope.useremail = MyService.getName();
 
-    /* get the json and print in dashboard page */
-    $http.get('app.json')
-        .then(function(res) {
-            $scope.table = res.data;
-        })
-        /* get the json and print in dashboard page */
-    $http.get('apps.json')
-        .then(function(res) {
-            $scope.tables = res.data;
-            console.log($scope.tables);
-        })
 });
