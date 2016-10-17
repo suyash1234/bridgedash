@@ -64,4 +64,52 @@ app.config(function($stateProvider, $urlRouterProvider) {
             loginRequired: loginRequired
         }
     })
+    $stateProvider
+
+    /* configure the login state*/
+        .state('dashboard.empContract', {
+        url: '/empContract',
+        templateUrl: 'template/empContract.html',
+        // controller: 'dashCtrl',
+        /* call the loginRequired function in the same page*/
+        resolve: {
+            loginRequired: loginRequired
+        }
+    })
+    $stateProvider
+
+    /* configure the login state*/
+        .state('dashboard.empBankDetails', {
+        url: '/empBankDetails',
+        templateUrl: 'template/empBankDetails.html',
+        // controller: 'dashCtrl',
+        /* call the loginRequired function in the same page*/
+        resolve: {
+            loginRequired: loginRequired
+        }
+    })
+    $stateProvider
+
+    /* configure the login state*/
+        .state('dashboard.empProfile', {
+        url: '/empProfile',
+        templateUrl: 'template/empProfile.html',
+        // controller: 'dashCtrl',
+        /* call the loginRequired function in the same page*/
+        resolve: {
+            loginRequired: loginRequired
+        }
+    })
+    $stateProvider
+
+    /* configure the login state*/
+        .state('dashboard.empPersonal', {
+        url: '/empPersonal',
+        templateUrl: 'template/empPersonal.html',
+        // controller: 'dashCtrl',
+        /* call the loginRequired function in the same page*/
+        resolve: {
+            loginRequired: loginRequired
+        }
+    })
 });
